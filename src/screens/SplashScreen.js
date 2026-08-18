@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { MotiView, MotiText } from 'moti';
 import { StatusBar } from 'expo-status-bar';
 import MavunoMark from '../components/MavunoMark';
 import MandalaBackdrop from '../components/MandalaBackdrop';
@@ -42,46 +41,22 @@ export default function SplashScreen({ navigation }) {
       <MandalaBackdrop color={colors.white} opacity={0.08} size={width * 1.3} style={{ top: -width * 0.35, left: -width * 0.15 }} />
 
       <View style={styles.top}>
-        <MotiView
-          from={{ opacity: 0, translateY: -10 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ type: 'timing', duration: 500 }}
-        >
+        <View>
           <MavunoMark size={104} color={colors.white} delay={100} />
-        </MotiView>
+        </View>
 
-        <MotiText
-          from={{ opacity: 0, translateY: 12 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ type: 'timing', duration: 500, delay: 550 }}
-          style={styles.wordmark}
-        >
+        <Text style={styles.wordmark}>
           MAVUNO
-        </MotiText>
-        <MotiText
-          from={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ type: 'timing', duration: 500, delay: 650 }}
-          style={styles.wordmarkSub}
-        >
+        </Text>
+        <Text style={styles.wordmarkSub}>
           CHURCH
-        </MotiText>
+        </Text>
 
-        <MotiView
-          from={{ opacity: 0, translateY: 10 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ type: 'timing', duration: 500, delay: 800 }}
-          style={styles.taglineRow}
-        >
+        <View style={styles.taglineRow}>
           <Text style={styles.tagline}>A people. A purpose. A place to belong.</Text>
-        </MotiView>
+        </View>
 
-        <MotiView
-          from={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ type: 'timing', duration: 500, delay: 1000 }}
-          style={styles.progressRow}
-        >
+        <View style={styles.progressRow}>
           <RingProgress
             size={64}
             strokeWidth={4}
@@ -95,16 +70,11 @@ export default function SplashScreen({ navigation }) {
             <Text style={styles.dateLabel}>{dateLabel}</Text>
             <Text style={styles.loadingLabel}>Preparing your space…</Text>
           </View>
-        </MotiView>
+        </View>
       </View>
 
       {/* bottom curved bar, echoing photo 4's white footer */}
-      <MotiView
-        from={{ opacity: 0, translateY: 40 }}
-        animate={{ opacity: 1, translateY: 0 }}
-        transition={{ type: 'timing', duration: 600, delay: 300 }}
-        style={styles.footer}
-      >
+      <View style={styles.footer}>
         <View style={styles.footerRow}>
           <CircleIcon name="chatbubble-outline" borderColor="rgba(0,0,0,0.15)" color={colors.black} size={40} iconSize={16} />
           <CircleIcon name="call-outline" borderColor="rgba(0,0,0,0.15)" color={colors.black} size={40} iconSize={16} />
@@ -117,7 +87,7 @@ export default function SplashScreen({ navigation }) {
         <Text style={styles.skip} onPress={() => navigation?.replace?.('Main')}>
           Tap play to enter
         </Text>
-      </MotiView>
+      </View>
     </LinearGradient>
   );
 }
