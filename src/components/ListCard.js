@@ -1,17 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { MotiView } from 'moti';
 import Pressy from './Pressy';
 import { colors, radii } from '../theme/theme';
 
 export default function ListCard({ eyebrow, title, meta, icon = 'chevron-forward', accentColor = colors.orange, delay = 0, onPress }) {
   return (
-    <MotiView
-      from={{ opacity: 0, translateY: 10 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      transition={{ type: 'timing', duration: 400, delay }}
-    >
+    <View>
       <Pressy onPress={onPress} rippleColor="rgba(255,255,255,0.08)">
         <View style={styles.card}>
           <View style={[styles.accent, { backgroundColor: accentColor }]} />
@@ -23,7 +18,7 @@ export default function ListCard({ eyebrow, title, meta, icon = 'chevron-forward
           <Ionicons name={icon} size={18} color={colors.textMuted} />
         </View>
       </Pressy>
-    </MotiView>
+    </View>
   );
 }
 
