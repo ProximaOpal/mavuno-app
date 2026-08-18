@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Mavuno Church",
+    "slug": "mavuno-church-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0A0A0A",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "splash": {
+      "backgroundColor": "#F5821F"
+    },
+    "android": {
+      "package": "com.mavuno.church",
+      "adaptiveIcon": {
+        "backgroundColor": "#F5821F"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./public/favicon.ico",
+      "meta": {
+        "themeColor": "#F5821F",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no"
+      }
+    }
+  }
+}

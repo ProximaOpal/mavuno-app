@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>You're Offline – Mavuno Church</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #F5821F;
+      --orange-dim: rgba(245, 130, 31, 0.15);
+      --bg: #0A0A0A;
+      --card: #141414;
+      --text: #FFFFFF;
+      --muted: rgba(255,255,255,0.45);
+      --border: rgba(255,255,255,0.08);
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      padding: 24px;
+      text-align: center;
+    }
+
+    /* Animated ambient ring */
+    .ring-wrap {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin-bottom: 32px;
+    }
+
+    .ring-wrap svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      animation: spin 6s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .ring-wrap .logo {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ring-wrap .logo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    /* Wifi-off icon fallback */
+    .wifi-off {
+      font-size: 64px;
+      line-height: 1;
+      margin-bottom: 8px;
+      filter: grayscale(0.3);
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    h1 span {
+      color: var(--orange);
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 320px;
+      margin: 0 auto 32px;
+    }
+
+    .retry-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 14px 28px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(245,130,31,0.35);
+    }
+
+    .retry-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .retry-btn:active {
+      opacity: 1;
+      transform: scale(0.97);
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 36px auto;
+    }
+
+    .verse {
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-style: italic;
+      max-width: 280px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .verse cite {
+      display: block;
+      margin-top: 6px;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--orange);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ring-wrap">
+    <!-- Spinning dashed ring -->
+    <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="70" cy="70" r="65" stroke="rgba(245,130,31,0.25)" stroke-width="1.5" stroke-dasharray="8 6" />
+      <circle cx="70" cy="70" r="55" stroke="rgba(245,130,31,0.12)" stroke-width="1" stroke-dasharray="4 8" />
+    </svg>
+    <div class="logo">
+      <img src="/icon-192.png" alt="Mavuno Church" />
+    </div>
+  </div>
+
+  <h1>You're <span>offline</span></h1>
+  <p>It looks like you've lost your connection. Check your internet and try again — we'll be here when you're back.</p>
+
+  <button class="retry-btn" onclick="window.location.reload()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+    </svg>
+    Try again
+  </button>
+
+  <div class="divider"></div>
+
+  <p class="verse">
+    "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."
+    <cite>— Jeremiah 29:11</cite>
+  </p>
+
+</body>
+</html>
