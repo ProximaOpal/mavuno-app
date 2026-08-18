@@ -172,6 +172,21 @@
         var installBtn = document.getElementById('pwa-install-btn');
         var dismissBtn = document.getElementById('pwa-dismiss-btn');
         var DISMISSED_KEY = 'mavuno_pwa_prompt_dismissed';
+        var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+        var isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
+        var isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+        function wasDismissed() {
+          try { return sessionStorage.getItem(DISMISSED_KEY) === '1'; } catch (_) { return false; }
+        }
+
+        function showToast(message, installable) {
+          if (!toast || wasDismissed() || isStandalone || !isMobile) return;
+          var subtitle = toast.querySelector('.toast-sub');
+          if (subtitle) subtitle.textContent = message;
+          installBtn.textContent = installable ? 'Install App' : 'How to install';
+          toast.style.display = 'block';
+        }
 
         function hideToast() {
           toast.classList.add('hidden');
@@ -181,32 +196,43 @@
         window.addEventListener('beforeinstallprompt', function (e) {
           e.preventDefault();
           deferredPrompt = e;
-          // Don't show if user already dismissed
-          if (sessionStorage.getItem(DISMISSED_KEY)) return;
-          // Delay slightly so the app has rendered
-          setTimeout(function () { toast.style.display = 'block'; }, 2500);
+          setTimeout(function () { showToast('Add Mavuno to your home screen for quick access', true); }, 1200);
         });
 
         installBtn.addEventListener('click', function () {
-          hideToast();
           if (deferredPrompt) {
             deferredPrompt.prompt();
             deferredPrompt.userChoice.then(function (choice) {
               console.log('[PWA] Install choice:', choice.outcome);
               deferredPrompt = null;
+              hideToast();
             });
+            return;
+          }
+          if (isIOS) {
+            showToast('Tap Share, then choose “Add to Home Screen”', false);
+          } else {
+            showToast('Open your browser menu and choose “Add to Home screen”', false);
           }
         });
 
         dismissBtn.addEventListener('click', function () {
           hideToast();
-          sessionStorage.setItem(DISMISSED_KEY, '1');
+          try { sessionStorage.setItem(DISMISSED_KEY, '1'); } catch (_) {}
         });
 
         window.addEventListener('appinstalled', function () {
           console.log('[PWA] App installed successfully');
           hideToast();
           deferredPrompt = null;
+        });
+
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            if (!deferredPrompt) {
+              showToast(isIOS ? 'Tap Share, then choose “Add to Home Screen”' : 'Open your browser menu and choose “Add to Home screen”', false);
+            }
+          }, 1600);
         });
 
         // --- Service Worker ---
