@@ -1,0 +1,102 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="400dp"
+    android:height="240dp"
+    android:viewportWidth="400"
+    android:viewportHeight="240">
+
+    <!-- Background Rich Gradient -->
+    <path
+        android:pathData="M0,0h400v240h-400z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="400"
+                android:endY="240"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF1E1B2E" />
+                <item android:offset="0.5" android:color="#FF2E1065" />
+                <item android:offset="1.0" android:color="#FF0F051D" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Glowing Stage Light / Aura -->
+    <path
+        android:pathData="M200,120m-90,0a90,90 0 1,1 180,0a90,90 0 1,1 -180,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="200"
+                android:startY="30"
+                android:endX="200"
+                android:endY="210"
+                android:type="radial"
+                android:gradientRadius="90">
+                <item android:offset="0.0" android:color="#66F5821F" />
+                <item android:offset="1.0" android:color="#00F5821F" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Stage Light Beams -->
+    <path
+        android:pathData="M80,0 L160,240 L120,240 L40,0 Z"
+        android:fillColor="#15F5821F" />
+    <path
+        android:pathData="M320,0 L240,240 L280,240 L360,0 Z"
+        android:fillColor="#15F5821F" />
+
+    <!-- Podium / Stage geometric lines -->
+    <path
+        android:pathData="M140,190 L260,190 L280,220 L120,220 Z"
+        android:fillColor="#33FFFFFF" />
+    <path
+        android:pathData="M120,220 L280,220 L300,240 L100,240 Z"
+        android:fillColor="#1AFFFFFF" />
+
+    <!-- Pulpit Cross / Open Bible Glow Icon -->
+    <!-- Open Book Base -->
+    <path
+        android:pathData="M160,140 C180,135 195,142 200,146 C205,142 220,135 240,140 L240,175 C220,170 205,176 200,180 C195,176 180,170 160,175 Z"
+        android:fillColor="#FFF5821F" />
+
+    <path
+        android:pathData="M165,145 C182,141 195,147 198,150 L198,175 C195,172 182,166 165,170 Z"
+        android:fillColor="#FFFFD54F" />
+
+    <path
+        android:pathData="M235,145 C218,141 205,147 202,150 L202,175 C205,172 218,166 235,170 Z"
+        android:fillColor="#FFFFE082" />
+
+    <!-- Vertical Light / Holy Spirit Flame above book -->
+    <path
+        android:pathData="M200,85 C192,100 188,112 188,122 C188,132 193,138 200,138 C207,138 212,132 212,122 C212,112 208,100 200,85 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="200"
+                android:startY="85"
+                android:endX="200"
+                android:endY="138"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFFFFFFF" />
+                <item android:offset="0.5" android:color="#FFFFD54F" />
+                <item android:offset="1.0" android:color="#FFF5821F" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Radiant Circular Orbit Rings -->
+    <path
+        android:pathData="M200,120m-60,0a60,60 0 1,1 120,0a60,60 0 1,1 -120,0"
+        android:strokeWidth="1.5"
+        android:strokeColor="#4DFFFFFF"
+        android:fillColor="#00000000" />
+
+    <!-- Subtle Particle Sparks -->
+    <path
+        android:pathData="M130,90 L132,92 M270,95 L272,97 M140,160 L142,162 M260,150 L262,152"
+        android:strokeWidth="3"
+        android:strokeColor="#FFFFD54F"
+        android:strokeLineCap="round" />
+</vector>

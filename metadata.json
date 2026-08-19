@@ -1,0 +1,6 @@
+{
+  "name": "Mavuno Church",
+  "description": "Mavuno Church Nairobi Campus hybrid Android host with multimodal Smart Kids Guard, Ella AI safety assistant, sermons, live services, and giving.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

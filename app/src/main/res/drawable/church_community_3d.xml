@@ -1,0 +1,106 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="400dp"
+    android:height="240dp"
+    android:viewportWidth="400"
+    android:viewportHeight="240">
+
+    <!-- Warm Amber & Sunset Teal Gradient -->
+    <path
+        android:pathData="M0,0h400v240h-400z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="400"
+                android:endY="240"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FF0F172A" />
+                <item android:offset="0.5" android:color="#FF1E293B" />
+                <item android:offset="1.0" android:color="#FF431407" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Warm Golden Sun Aura -->
+    <path
+        android:pathData="M200,90m-80,0a80,80 0 1,1 160,0a80,80 0 1,1 -160,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="200"
+                android:startY="10"
+                android:endX="200"
+                android:endY="170"
+                android:type="radial"
+                android:gradientRadius="80">
+                <item android:offset="0.0" android:color="#77F5821F" />
+                <item android:offset="0.7" android:color="#33F59E0B" />
+                <item android:offset="1.0" android:color="#00000000" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Church Hill Outline & Roof Silhouette -->
+    <path
+        android:pathData="M0,190 Q120,165 200,160 Q280,155 400,190 L400,240 L0,240 Z"
+        android:fillColor="#FF18181B" />
+
+    <!-- Church Architecture Silhouette (Spire & Cross) -->
+    <path
+        android:pathData="M185,160 L185,110 L200,80 L215,110 L215,160 Z"
+        android:fillColor="#FF27272A" />
+
+    <!-- Cross on Church Spire -->
+    <path
+        android:pathData="M200,60 L200,78 M193,66 L207,66"
+        android:strokeWidth="3.5"
+        android:strokeColor="#FFF5821F"
+        android:strokeLineCap="round" />
+
+    <!-- Community Figures Silhouette with Uplifted Hands -->
+    <!-- Center Left Person -->
+    <path
+        android:pathData="M140,172m-8,0a8,8 0 1,1 16,0a8,8 0 1,1 -16,0"
+        android:fillColor="#FFD4D4D8" />
+    <path
+        android:pathData="M125,210 C125,188 132,184 140,184 C148,184 155,188 155,210 Z"
+        android:fillColor="#FFA1A1AA" />
+    <path
+        android:pathData="M128,192 L118,178 M152,192 L162,178"
+        android:strokeWidth="3"
+        android:strokeColor="#FFA1A1AA"
+        android:strokeLineCap="round" />
+
+    <!-- Center Right Person -->
+    <path
+        android:pathData="M260,172m-8,0a8,8 0 1,1 16,0a8,8 0 1,1 -16,0"
+        android:fillColor="#FFD4D4D8" />
+    <path
+        android:pathData="M245,210 C245,188 252,184 260,184 C268,184 275,188 275,210 Z"
+        android:fillColor="#FFA1A1AA" />
+    <path
+        android:pathData="M248,192 L238,178 M272,192 L282,178"
+        android:strokeWidth="3"
+        android:strokeColor="#FFA1A1AA"
+        android:strokeLineCap="round" />
+
+    <!-- Center Leading Person -->
+    <path
+        android:pathData="M200,165m-9,0a9,9 0 1,1 18,0a9,9 0 1,1 -18,0"
+        android:fillColor="#FFFFFFFF" />
+    <path
+        android:pathData="M184,215 C184,180 191,176 200,176 C209,176 216,180 216,215 Z"
+        android:fillColor="#FFF5821F" />
+    <path
+        android:pathData="M186,188 L170,168 M214,188 L230,168"
+        android:strokeWidth="3.5"
+        android:strokeColor="#FFF5821F"
+        android:strokeLineCap="round" />
+
+    <!-- Floating Light Flares / Fellowship Sparks -->
+    <path
+        android:pathData="M100,100 L102,102 M300,110 L302,112 M70,140 L72,142 M330,135 L332,137"
+        android:strokeWidth="3"
+        android:strokeColor="#FFFFB74D"
+        android:strokeLineCap="round" />
+</vector>
